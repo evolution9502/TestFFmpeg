@@ -71,7 +71,7 @@ Java_com_studio_yunk_testffmpeg_XPlay_Open(JNIEnv *env, jobject instance, jstrin
         return;
     }
     LOGW("avformat_open_input %s success!",path);
-    //获取流信息
+    //獲取stream
     re = avformat_find_stream_info(ic,0);
     if(re != 0)
     {
@@ -176,7 +176,7 @@ Java_com_studio_yunk_testffmpeg_XPlay_Open(JNIEnv *env, jobject instance, jstrin
     char *rgb = new char[1920*1080*4];
     char *pcm = new char[48000*4*2];
 
-    //音訊重新采樣context初始化
+    //音訊重新採樣context初始化
     SwrContext *actx = swr_alloc();
     actx = swr_alloc_set_opts(actx,
                               av_get_default_channel_layout(2),
@@ -308,7 +308,7 @@ Java_com_studio_yunk_testffmpeg_XPlay_Open(JNIEnv *env, jobject instance, jstrin
 
 
 
-    //关闭context
+    //關閉context
     avformat_close_input(&ic);
 
 
